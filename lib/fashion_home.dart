@@ -7,21 +7,6 @@ import 'fashion_page4.dart';
 import 'fashion_page5.dart';
 import 'fashion_page6.dart';
 
-void main() {
-  runApp(const FashionHomeApp());
-}
-
-class FashionHomeApp extends StatelessWidget {
-  const FashionHomeApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: FashionHomeScreen(),
-    );
-  }
-}
 
 class FashionHomeScreen extends StatelessWidget {
   const FashionHomeScreen({super.key});
@@ -111,7 +96,7 @@ class FashionHomeScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const FashionPage1(),
+                              builder: (context) => const FashionPage1Screen(),
                             ),
                           );
                         },

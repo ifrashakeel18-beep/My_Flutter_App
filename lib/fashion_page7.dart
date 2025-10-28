@@ -1,22 +1,6 @@
 import 'package:flutter/material.dart';
 import 'fashion_page2.dart';
 
-void main() {
-  runApp(const FashionPage7());
-}
-
-class FashionPage7 extends StatelessWidget {
-  const FashionPage7({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: FashionPage7Screen(),
-    );
-  }
-}
-
 class FashionPage7Screen extends StatelessWidget {
   const FashionPage7Screen({super.key});
 
@@ -273,7 +257,7 @@ class FashionPage7Screen extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const FashionPage2()),
+                        MaterialPageRoute(builder: (context) => const FashionPage2Screen()),
                       );
                     },
                     child: const Text(
