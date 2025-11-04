@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'fashion_page7.dart';
+import 'fashion_home.dart';
 
-class FashionPage1Screen extends StatelessWidget {
+class FashionPage1Screen extends StatefulWidget {
   const FashionPage1Screen({super.key});
 
+  @override
+  State<FashionPage1Screen> createState() => _FashionPage1ScreenState();
+}
+
+class _FashionPage1ScreenState extends State<FashionPage1Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -295,44 +301,51 @@ class FashionPage1Screen extends StatelessWidget {
           ),
         ),
       ),
-       bottomNavigationBar: BottomNavigationBar(
-         type: BottomNavigationBarType.fixed,
-         backgroundColor: Colors.brown[200],
-         currentIndex: 0,
-         onTap: (index) {
-           if (index == 1) {
-             Navigator.push(
-                 context,
-               MaterialPageRoute(
-                   builder: (context) => const FashionPage7Screen(),
-               ),
-             );
-           }
-         },
-         items: const [
-           BottomNavigationBarItem(
-               icon: Icon(Icons.home),
-             label: ' ',
-           ),
-           BottomNavigationBarItem(
-             icon: Icon(Icons.fire_truck_rounded),
-             label: ' ',
-           ),
-           BottomNavigationBarItem(
-             icon: Icon(Icons.apps),
-             label: ' '
-           ),
-           BottomNavigationBarItem(
-             icon: Icon(Icons.support_agent),
-             label: ' '
-           ),
-           BottomNavigationBarItem(
-             icon: Icon(Icons.person),
-             label: ' ',
-           ),
-         ],
-
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.brown[200],
+        currentIndex: 0,
+        onTap: (index) {
+          if (index == 0) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const FashionHomeScreen(),
+              ),
+            );
+          }else if (index == 1){
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const FashionPage7Screen(),
+              ),
+            );
+          }
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: ' ',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.fire_truck_rounded),
+            label: ' ',
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.apps),
+              label: ' '
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.support_agent),
+              label: ' '
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: ' ',
+          ),
+        ],
+
+      ),
     );
   }
 
@@ -359,3 +372,4 @@ class FashionPage1Screen extends StatelessWidget {
     );
   }
 }
+

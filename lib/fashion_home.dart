@@ -1,47 +1,74 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'fashion_page1.dart';
-import 'fashion_page2.dart';
-import 'fashion_page7.dart';
-import 'fashion_page3.dart';
-import 'fashion_page4.dart';
-import 'fashion_page5.dart';
-import 'fashion_page6.dart';
+import 'login_page.dart';
+import 'signup_Page.dart';
 
-
-class FashionHomeScreen extends StatelessWidget {
+class FashionHomeScreen extends StatefulWidget {
   const FashionHomeScreen({super.key});
+
+  @override
+  _FashionHomeScreenState createState() => _FashionHomeScreenState();
+}
+
+class _FashionHomeScreenState extends State<FashionHomeScreen> {
+  Future<void> _signInWithGoogle() async {
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    if (googleUser == null) return;
+    final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+
+    await FirebaseAuth.instance.signInWithCredential(credential);
+
+    if (!mounted) return;
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const FashionPage1Screen()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.brown[300],
       body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(height: 20),
-              const Text(
-                "Fashion",
-                style: TextStyle(
-                  fontSize: 35,
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.italic,
-                ),
+        child: Column(
+          children: [
+            const SizedBox(height: 20),
+            const Text(
+              "Fashion",
+              style: TextStyle(
+                fontSize: 35,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
               ),
-              const SizedBox(height: 20),
-              Image.asset(
-                'assets/fullshotman.png',
-                width: 350,
-                height: 590,
-                fit: BoxFit.cover,
-              ),
-              const SizedBox(height: 15),
+            ),
+            const SizedBox(height: 20),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
+            Image.asset(
+              'assets/fullshotman.png',
+              width: 350,
+              height: 590,
+              fit: BoxFit.cover,
+            ),
+            const SizedBox(height: 15),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const signup_Page()),
+                    );
+                  },
+                  child: const Text(
                     "Sign Up",
                     style: TextStyle(
                       fontSize: 13,
@@ -49,15 +76,21 @@ class FashionHomeScreen extends StatelessWidget {
                       decoration: TextDecoration.underline,
                     ),
                   ),
-                  SizedBox(width: 8),
-                  Text(
-                    "Or",
-                    style: TextStyle(
-                      fontSize: 13,
-                    ),
-                  ),
-                  SizedBox(width: 8),
-                  Text(
+                ),
+                const SizedBox(width: 8),
+                const Text(
+                  "Or",
+                  style: TextStyle(fontSize: 13),
+                ),
+                const SizedBox(width: 8),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const login_page()),
+                    );
+                  },
+                  child: const Text(
                     "Log In",
                     style: TextStyle(
                       fontSize: 13,
@@ -65,17 +98,18 @@ class FashionHomeScreen extends StatelessWidget {
                       decoration: TextDecoration.underline,
                     ),
                   ),
-                ],
-              ),
-              const Spacer(),
+                ),
+              ],
+            ),
+            const Spacer(),
 
-              Padding(
-                padding:
-                const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
+              child: Row(
+                children: [
+                  InkWell(
+                    onTap: _signInWithGoogle,
+                    child: Container(
                       height: 55,
                       width: 55,
                       decoration: BoxDecoration(
@@ -90,47 +124,45 @@ class FashionHomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Expanded(
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const FashionPage1Screen(),
-                            ),
-                          );
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.only(left: 15),
-                          height: 55,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: const Center(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Get Started",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w800,
-                                  ),
+                  ),
+                  const SizedBox(width: 15),
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const FashionPage1Screen()),
+                        );
+                      },
+                      child: Container(
+                        height: 55,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: const Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Get Started",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w800,
                                 ),
-                                SizedBox(width: 10),
-                                Icon(Icons.arrow_forward),
-                              ],
-                            ),
+                              ),
+                              SizedBox(width: 10),
+                              Icon(Icons.arrow_forward),
+                            ],
                           ),
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
