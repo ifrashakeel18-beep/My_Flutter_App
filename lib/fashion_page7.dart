@@ -1,18 +1,32 @@
 import 'package:flutter/material.dart';
 import 'fashion_page2.dart';
 
-class FashionPage7Screen extends StatelessWidget {
+class FashionPage7Screen extends StatefulWidget {
   const FashionPage7Screen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final List<String> images = [
-      'assets/girl5.png',
-      'assets/girl2.png',
-      'assets/boy3.png',
-      'assets/boy4.png',
+  State<FashionPage7Screen> createState() => FashionPage7ScreenState();
+}
+
+class FashionPage7ScreenState extends State<FashionPage7Screen> {
+       List<String> images = [
+      'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762273819/girl5_rdz8nm.png',
+      'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762271282/girl4_dlowte.png',
+      'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762271200/girl3_goncxu.png',
+      'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762271095/boy4_v7zmrw.png',
+      'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762271042/girl2_wudtup.png',
+      'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762270992/boy2_oxdmqs.png',
+      'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762270914/boy3_c1toaj.png',
+      'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762270816/girl1_bmlqpw.png',
+      'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762258994/fullshotman_t7zw7f.png',
     ];
 
+    @override
+    void initState() {
+      super.initState();
+    }
+       @override
+       Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.brown[100],
       appBar: AppBar(
@@ -53,25 +67,7 @@ class FashionPage7Screen extends StatelessWidget {
         children: [
           const SizedBox(height: 10),
 
-          // Fixed the extra 'child:' issue
-          Row(
-            children: [
-              Container(
-                height: 30,
-                width: 30,
-                margin: const EdgeInsets.only(left: 30),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: const Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.black54,
-                  size: 20,
-                ),
-              ),
-            ],
-          ),
+
 
           const SizedBox(height: 10),
 
@@ -88,7 +84,7 @@ class FashionPage7Screen extends StatelessWidget {
                         children: [
                           ClipRRect(
                             borderRadius: BorderRadius.circular(12),
-                            child: Image.asset(
+                            child: Image.network(
                               images[index],
                               height: 100,
                               width: 100,

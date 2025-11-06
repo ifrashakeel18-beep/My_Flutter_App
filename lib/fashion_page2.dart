@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:provider/provider.dart';
+import 'products_stream_provider.dart';
+
+
+
 
 
 class FashionPage2Screen extends StatefulWidget {
@@ -9,17 +16,24 @@ class FashionPage2Screen extends StatefulWidget {
 }
 
 class FashionPage2ScreenState extends State<FashionPage2Screen> {
+  List<String> images = [
+    'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762273819/girl5_rdz8nm.png',
+    'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762271282/girl4_dlowte.png',
+    'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762271200/girl3_goncxu.png',
+    'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762271095/boy4_v7zmrw.png',
+    'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762271042/girl2_wudtup.png',
+    'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762270992/boy2_oxdmqs.png',
+    'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762270914/boy3_c1toaj.png',
+    'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762270816/girl1_bmlqpw.png',
+    'https://res.cloudinary.com/dhkqq5fug/image/upload/v1762258994/fullshotman_t7zw7f.png',
+  ];
+  @override
+  void initState() {
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
-    final List<String> images = [
-      'assets/fullshotman.png',
-      'assets/girl2.png',
-      'assets/girl3.png',
-      'assets/girl4.png',
-      'assets/girl5.png',
-      'assets/boy3.png',
-      'assets/boy4.png',
-    ];
+    final productsProvider = Provider.of<ProductsStreamProvider>(context, listen: false);
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -33,7 +47,7 @@ class FashionPage2ScreenState extends State<FashionPage2Screen> {
                   child: PageView.builder(
                     itemCount: images.length,
                     itemBuilder: (context, index) {
-                      return Image.asset(
+                      return Image.network(
                         images[index],
                         fit: BoxFit.cover,
                         width: double.infinity,
@@ -166,7 +180,7 @@ class FashionPage2ScreenState extends State<FashionPage2Screen> {
                           ],
                         ),
 
-                        const SizedBox(height: 16),
+                        const SizedBox(height: 20),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -216,8 +230,8 @@ class FashionPage2ScreenState extends State<FashionPage2Screen> {
                                 ),
                               ],
                             ),
-                              ElevatedButton(
-                                  onPressed: () {},
+                            ElevatedButton(
+                              onPressed: () {},
 
                               style: ElevatedButton.styleFrom(
                                 padding: const EdgeInsets.symmetric(
@@ -238,6 +252,7 @@ class FashionPage2ScreenState extends State<FashionPage2Screen> {
                             ),
                           ],
                         ),
+
                         const SizedBox(height: 16),
                       ],
                     ),

@@ -54,7 +54,6 @@ class login_pagestate extends State<login_page> {
               passwordController, "Password", Icons.password, true),
           const SizedBox(height: 30),
           UiHelper.CustomButton(() {
-            // ✅ FIXED HERE
             login(emailController.text.toString(),
                 passwordController.text.toString());
           }, "Login"),
