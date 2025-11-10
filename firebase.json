@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"flutter":{"platforms":{"android":{"default":{"projectId":"fashion-app-929b2","appId":"1:1077018375331:android:d4d02ec70ad8e12f973b16","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"fashion-app-929b2","configurations":{"android":"1:1077018375331:android:d4d02ec70ad8e12f973b16","ios":"1:1077018375331:ios:5d6bbe9d46c9a4ab973b16","macos":"1:1077018375331:ios:5d6bbe9d46c9a4ab973b16","web":"1:1077018375331:web:aaa9e83c69a92440973b16","windows":"1:1077018375331:web:731f5a7dd33aeb36973b16"}}}}}}
+=======
+{"flutter":{"platforms":{"android":{"default":{"projectId":"apiproject-d4371","appId":"1:741986168021:android:31ab7c4febb49ef8dfc65c","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"apiproject-d4371","configurations":{"android":"1:741986168021:android:31ab7c4febb49ef8dfc65c","ios":"1:741986168021:ios:3bfc6fdb26ce64c3dfc65c","macos":"1:741986168021:ios:3bfc6fdb26ce64c3dfc65c","web":"1:741986168021:web:d4a40142cf6a602bdfc65c","windows":"1:741986168021:web:970e2042ca51a49cdfc65c"}}}}}}
+>>>>>>> 8b54285 (api's practice)

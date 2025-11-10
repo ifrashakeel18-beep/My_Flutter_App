@@ -1,6 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<<<<<<< HEAD
     <application
         android:label="second_flutter_project"
+=======
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:label="api_project1"
+>>>>>>> 8b54285 (api's practice)
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "second_flutter_project",
     "short_name": "second_flutter_project",
+=======
+    "name": "api_project1",
+    "short_name": "api_project1",
+>>>>>>> 8b54285 (api's practice)
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

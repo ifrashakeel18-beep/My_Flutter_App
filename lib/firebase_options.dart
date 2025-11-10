@@ -41,6 +41,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
+<<<<<<< HEAD
     apiKey: 'AIzaSyBXFdBZc4OmUyOgyaIlWDnRO4KBYNnO8zQ',
     appId: '1:1077018375331:web:aaa9e83c69a92440973b16',
     messagingSenderId: '1077018375331',
@@ -87,3 +88,50 @@ class DefaultFirebaseOptions {
   );
 
 }
+=======
+    apiKey: 'AIzaSyBw5ZUMfNbPwa5PKz9ygdzfWz0SZRYOVtE',
+    appId: '1:741986168021:web:d4a40142cf6a602bdfc65c',
+    messagingSenderId: '741986168021',
+    projectId: 'apiproject-d4371',
+    authDomain: 'apiproject-d4371.firebaseapp.com',
+    storageBucket: 'apiproject-d4371.firebasestorage.app',
+    measurementId: 'G-N8RBL67GYP',
+  );
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyDdAg5ZvehIi56Yz9nwo3WNa7o1dqqNdF8',
+    appId: '1:741986168021:android:31ab7c4febb49ef8dfc65c',
+    messagingSenderId: '741986168021',
+    projectId: 'apiproject-d4371',
+    storageBucket: 'apiproject-d4371.firebasestorage.app',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyBf-DRsya2oNAgWvNsstOCKzV0nTVNrEGI',
+    appId: '1:741986168021:ios:3bfc6fdb26ce64c3dfc65c',
+    messagingSenderId: '741986168021',
+    projectId: 'apiproject-d4371',
+    storageBucket: 'apiproject-d4371.firebasestorage.app',
+    iosBundleId: 'com.example.apiProject1',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyBf-DRsya2oNAgWvNsstOCKzV0nTVNrEGI',
+    appId: '1:741986168021:ios:3bfc6fdb26ce64c3dfc65c',
+    messagingSenderId: '741986168021',
+    projectId: 'apiproject-d4371',
+    storageBucket: 'apiproject-d4371.firebasestorage.app',
+    iosBundleId: 'com.example.apiProject1',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyBw5ZUMfNbPwa5PKz9ygdzfWz0SZRYOVtE',
+    appId: '1:741986168021:web:970e2042ca51a49cdfc65c',
+    messagingSenderId: '741986168021',
+    projectId: 'apiproject-d4371',
+    authDomain: 'apiproject-d4371.firebaseapp.com',
+    storageBucket: 'apiproject-d4371.firebasestorage.app',
+    measurementId: 'G-0RTV95XMC8',
+  );
+}
+>>>>>>> 8b54285 (api's practice)

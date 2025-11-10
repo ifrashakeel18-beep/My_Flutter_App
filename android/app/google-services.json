@@ -1,21 +1,37 @@
 {
   "project_info": {
+<<<<<<< HEAD
     "project_number": "1077018375331",
     "project_id": "fashion-app-929b2",
     "storage_bucket": "fashion-app-929b2.firebasestorage.app"
+=======
+    "project_number": "741986168021",
+    "project_id": "apiproject-d4371",
+    "storage_bucket": "apiproject-d4371.firebasestorage.app"
+>>>>>>> 8b54285 (api's practice)
   },
   "client": [
     {
       "client_info": {
+<<<<<<< HEAD
         "mobilesdk_app_id": "1:1077018375331:android:d4d02ec70ad8e12f973b16",
         "android_client_info": {
           "package_name": "com.example.second_flutter_project"
+=======
+        "mobilesdk_app_id": "1:741986168021:android:31ab7c4febb49ef8dfc65c",
+        "android_client_info": {
+          "package_name": "com.example.api_project1"
+>>>>>>> 8b54285 (api's practice)
         }
       },
       "oauth_client": [],
       "api_key": [
         {
+<<<<<<< HEAD
           "current_key": "AIzaSyBxknRqFr_ImFVUUwEVlsIOqSzQtOO-M_0"
+=======
+          "current_key": "AIzaSyDdAg5ZvehIi56Yz9nwo3WNa7o1dqqNdF8"
+>>>>>>> 8b54285 (api's practice)
         }
       ],
       "services": {
